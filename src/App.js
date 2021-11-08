@@ -1,8 +1,8 @@
 import "./App.css";
-import { useEffect, useState, createContext } from "react";
+import { useEffect, useState } from "react";
 import { signInWithPopup, GoogleAuthProvider, signOut} from "@firebase/auth";
 import { useAuthState} from "react-firebase-hooks/auth";
-import { auth, db} from "./firebaseconfig";
+import { auth } from "./firebaseconfig";
 import Nav from "./Nav";
 import Article from "./Article";
 import { fetchTitles } from "./articleService";
@@ -11,19 +11,6 @@ import { AuthProvider } from './context';
 function SignIn() {
   function signInWithGoogle() {
     signInWithPopup(auth, new GoogleAuthProvider())
-        .then((result) => {
-            const credential = GoogleAuthProvider.credentialFromResult(result);
-            const token = credential.accessToken;
-            const user = result.user;
-        }).catch((error) => {
-            // Handle Errors here.
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            // The email of the user's account used.
-            const email = error.email;
-            // The AuthCredential type that was used.
-            const credential = GoogleAuthProvider.credentialFromError(error);
-        });
   }
   return (
     <div className="signin">
@@ -60,7 +47,7 @@ export default function App() {
     }
 
     const removeArticle = (articleId) => {
-        const newTitles = titles.filter(t => t.id != articleId);
+        const newTitles = titles.filter(t => t.id !== articleId);
         setTitles(newTitles);
         setArticleId(null);
     }

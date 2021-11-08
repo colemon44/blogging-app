@@ -1,4 +1,4 @@
-import { query, where, collection, doc, getDoc, getDocs } from 'firebase/firestore';
+import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
 import { db } from './firebaseconfig.js';
 
 export async function fetchTitles() {
@@ -23,5 +23,4 @@ export async function fetchArticleById(id) {
     } else {
         return null;
     }
-    return [];
 }
