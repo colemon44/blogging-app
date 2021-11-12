@@ -28,7 +28,6 @@ export default function Nav({ titles, setArticleId, addArticle, removeArticle })
             .then((e) => {
                 addArticle({id: e.id, title: payload.title});
             });
-
     }
 
     const handleChangeTitle = (e) => {

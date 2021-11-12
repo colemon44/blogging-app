@@ -4,6 +4,11 @@
   grid-template-columns: 1fr 3fr;
   height: 100vh;
   overflow: scroll;
+  background-image: linear-gradient(
+    to right,
+    rgb(124, 200, 252),
+    rgb(255, 106, 106)
+  );
 }
 
 header {
@@ -18,11 +23,11 @@ article {
 }
 
 nav {
-  background-color: #dee9ff;
+  font-style: normal;
 }
 
 article .date {
-  font-style: italic;
+  font-size: 12;
 }
 
 article .body {
@@ -30,41 +35,41 @@ article .body {
 }
 
 .post-form {
-    margin: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.post-form input,textarea {
-    width: 90%;
-    margin: 0.5rem 0;
+.post-form input,
+textarea {
+  width: 90%;
+  margin: 0.5rem 0;
 }
 
-.post-form input[type="text"],textarea {
-    border-radius: 1rem 1rem;
-    border-style: none;
-    padding: 0.5rem;
+.post-form input[type="text"],
+textarea {
+  border-radius: 1rem 1rem;
+  border-style: none;
+  padding: 0.5rem;
 }
 
 .post-form input[type="submit"] {
-    padding: 1rem;
-    border-radius: 1.5rem;
-    border-style: none;
-    box-shadow: 0.3rem 0.3rem 1rem #999;
-
-    background-color: #1055a0;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  border-style: none;
+  box-shadow: 0.3rem 0.3rem 1rem #999;
+  background-color: #1055a0;
 }
 
 .post-form input[type="submit"]:hover {
-    background-color: #045090;
-    cursor: pointer;
+  background-color: #045090;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 800px) {
-    .App {
-        display: flex;
-        flex-direction: column;
-    }
+  .App {
+    display: flex;
+    flex-direction: column;
+  }
 }
-
